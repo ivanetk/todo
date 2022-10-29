@@ -3,7 +3,7 @@ name: Todo workflow
 on:
   push:
     branches:
-    - "release/*" #[a-zA-Z0-9]+ means one or more of the preceding characters (a-z, A-Z or 0-9). #release/[a-zA-Z0-9]+ will not match release/
+    - "release" #[a-zA-Z0-9]+ means one or more of the preceding characters (a-z, A-Z or 0-9). #release/[a-zA-Z0-9]+ will not match release/
 
 jobs:
   build_and_deploy:

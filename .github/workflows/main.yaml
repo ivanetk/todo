@@ -17,4 +17,12 @@ jobs:
       uses: actions/checkout@v3
       with:
         ref: ${{ github.ref_name }}
-    
+
+    - name: Deploy to vercel
+      uses: amondnet/vercel-action@v25.1.0
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+        github-token: ${{ secrets.GH_TOKEN }} #Optional
+        vercel-org-id: ${{ secrets.ORG_ID }}  #Required
+        vercel-project-id: ${{ secrets.PROJECT_ID }} #Required 
+        vercel-args: '--prod'

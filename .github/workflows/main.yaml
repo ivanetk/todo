@@ -3,7 +3,7 @@ name: Todo workflow
 on:
   push:
     branches:
-    - 'release/*'
+    - release/* #.+ means one or more. release/.+ will not match release/
 
 
 jobs:
@@ -11,8 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Echo the branch name
+      run: echo "the current branch ${{ github.ref_name }}"
+
     - name: Checkout branch
       uses: actions/checkout@v3
       with:
-        ref: 'release/*'
+        ref: $${{ github.ref_name }}
     

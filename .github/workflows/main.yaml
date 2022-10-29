@@ -1,9 +1,9 @@
 name: Todo workflow
 
 on:
-  - push
-    #branches:
-    #- 'release/*'
+  push:
+    branches:
+    - 'release/*'
 
 
 jobs:
@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v3
-      #with:
-       # ref: 'release/*'
+      with:
+        ref: 'release/*'
     
